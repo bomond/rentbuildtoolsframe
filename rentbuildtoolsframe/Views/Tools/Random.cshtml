@@ -1,0 +1,33 @@
+﻿
+@model rentbuildtoolsframe.ViewModels.RandomToolViewModel
+@{
+	ViewBag.Title = "Random";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+	This is comment
+		on multipleLines
+*@
+
+@{
+	var className = Model.Customers.Count > 0 ? "popular" : null;
+}
+
+<h2 class="className">@Model.Tool.Name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+	<text>Прежде не было арендовано.</text>
+}
+else
+{
+	<ul>
+		@foreach (var customer in Model.Customers)
+		{
+			<li>@customer.Name</li>
+		}
+	</ul>
+
+}
+

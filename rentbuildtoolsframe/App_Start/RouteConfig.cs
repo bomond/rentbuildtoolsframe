@@ -12,7 +12,12 @@ namespace rentbuildtoolsframe
 		public static void RegisterRoutes(RouteCollection routes)
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+			routes.MapMvcAttributeRoutes();
+			//routes.MapRoute(
+			//	"ToolsByRentDay",
+			//	"tools/rentdays/{year}/{month}/{day}",
+			//	new { controller = "Tools", action = "ByRentDate" },	
+			//	new { year = @"2015|2019", month = @"\d{2}", day = @"\d{2}"});
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
